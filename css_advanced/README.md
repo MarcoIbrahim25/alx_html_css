@@ -1,4 +1,4 @@
-# 😁 SmileSchool Landing Page – Advanced CSS Project
+# 😁 SmileSchool – Advanced CSS Project
 
 Welcome to the **SmileSchool** landing page project!
 
