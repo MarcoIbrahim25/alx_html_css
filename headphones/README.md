@@ -23,9 +23,10 @@ You must **match the Figma design exactly**, using semantic HTML and responsive 
 ## 🖼️ Design Reference
 
 - **Figma Design by:** Nicolas Philippot (UI/UX Designer)
-- **Figma File:** [Access the Figma file here](https://www.figma.com/) *(duplicate it to your drafts to inspect measurements and styles)*
+- **Figma File:** [Access the Figma file here](https://www.figma.com/) _(duplicate it to your drafts to inspect measurements and styles)_
 
 📌 **Note:**
+
 - If your computer doesn’t have the fonts, download them here:
   - [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
   - [Spin Cycle OT](https://www.fonts.com/font/spin-cycle)
@@ -74,3 +75,4 @@ To run this project locally:
 1. Clone the repository:
    ```bash
    git clone https://github.com/YourUsername/alx_html_css.git
+   ```
