@@ -8,6 +8,69 @@ body {
 }
 header {
   background-image: url("/headphones/images/headphones_hero_1.jpg");
-  height: 200vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: center;
+}
+.headlist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  font-weight: bold;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20%;
 }
 
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.hero-content .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+.hero-content .cta-btn {
+  background-color: #ff5c5c;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 30px;
+}
+
+.hero-content .cta-btn:hover {
+  background-color: #e04848;
+}
+
+.hero-content .description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+  text-align: center;
+  width: 50%;
+}
