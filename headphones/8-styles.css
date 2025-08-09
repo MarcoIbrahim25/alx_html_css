@@ -1,6 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/spin-cycle');
-/* General Reset */
-
+@import url("https://fonts.cdnfonts.com/css/spin-cycle");
 
 * {
   margin: 0;
@@ -16,7 +14,7 @@ body {
 /* Buttons */
 .btn {
   display: inline-block;
-  background: #FF6565;
+  background: #ff6565;
   color: white;
   padding: 12px 24px;
   text-decoration: none;
@@ -31,7 +29,7 @@ body {
 /* Header / Hero */
 .hero {
   background: linear-gradient(rgba(13, 27, 42, 0.8), rgba(27, 38, 59, 0.8)),
-              url(images/headphones_hero_1.jpg) center/cover no-repeat;
+    url(images/headphones_hero_1.jpg) center/cover no-repeat;
   color: white;
   padding-bottom: 100px;
 }
@@ -44,7 +42,7 @@ nav {
 nav .logo {
   font-weight: bold;
   font-size: 1.5em;
-  font-family: 'Spin Cycle OT';
+  font-family: "Spin Cycle OT";
 }
 
 nav ul {
@@ -59,7 +57,7 @@ nav ul li a {
   text-decoration: none;
 }
 nav ul li a:hover {
-  color: #FF6565;
+  color: #ff6565;
 }
 .hero-content {
   text-align: center;
@@ -97,7 +95,7 @@ nav ul li a:hover {
 }
 .icons i {
   font-size: 2.5em;
-  color: #FF6565;
+  color: #ff6565;
   margin-bottom: 10px;
 }
 
@@ -122,7 +120,7 @@ nav ul li a:hover {
 .pentagon {
   width: 120px;
   height: 120px;
-  background: #FF6565;
+  background: #ff6565;
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   display: flex;
   flex-direction: column;
@@ -150,15 +148,17 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
 }
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
   padding: 10px;
   margin: 10px 0;
   border: none;
   border-bottom: 2px solid #ccc;
   outline: none;
 }
-.contact input:focus, .contact textarea:focus {
-  border-bottom: 2px solid #FF6565;
+.contact input:focus,
+.contact textarea:focus {
+  border-bottom: 2px solid #ff6565;
 }
 
 /* Footer */
@@ -183,85 +183,80 @@ footer {
   font-size: 1.2em;
 }
 .footer-content .socials a:hover {
-  color: #FF6565;
+  color: #ff6565;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  .icons, .pentagons {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-content {
-    flex-direction: column;
-  }
+/* ===== Mobile menu system (no JS) ===== */
+.menu-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
-
-@media (max-width: 480px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 200px;
-    background: #1b263b;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    transition: right 0.4s ease-in-out;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  /* HAMBURGER */
-  .hamburger {
+.menu_btn {
   display: none;
-  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  gap: 5px;
+  color: #fff;
+}
+.menu_btn .icon-burger {
+  font-size: 22px;
+  line-height: 1;
+}
+.menu_btn .icon-x {
+  display: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+.desktop_nav {
+  display: flex;
+}
+.mobile_nav {
+  display: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .menu_btn {
+    display: flex;
+    position: absolute;
+    left: 15px;
+    top: 22px;
+    z-index: 3;
   }
 
-  .hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
+  .desktop_nav {
+    display: none !important;
   }
-  .overlay {
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.95);
-  overflow-y: hidden;
-  transition: 0.5s;
-}
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-}
+  .mobile_nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 12px;
+    right: 12px;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 16px;
+    border-radius: 10px;
+    z-index: 2;
+  }
 
-.overlay-content a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 25px;
-  color: white;
-  display: block;
-  transition: 0.3s;
-}
-.overlay-content a:hover {
-  color: #FF6565;
-}
+  .menu-toggle:checked ~ .mobile_nav {
+    display: flex;
+  }
+  .menu-toggle:checked ~ .menu_btn .icon-burger {
+    display: none;
+  }
+  .menu-toggle:checked ~ .menu_btn .icon-x {
+    display: inline-block;
+  }
 }
