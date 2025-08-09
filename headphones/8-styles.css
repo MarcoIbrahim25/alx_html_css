@@ -5,13 +5,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   color: #333;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   background: #ff6565;
@@ -22,23 +22,26 @@ body {
   font-weight: bold;
   transition: background 0.3s;
 }
+
 .btn:hover {
   background: #e14f4f;
 }
 
-/* Header / Hero */
 .hero {
   background: linear-gradient(rgba(13, 27, 42, 0.8), rgba(27, 38, 59, 0.8)),
     url(images/headphones_hero_1.jpg) center/cover no-repeat;
   color: white;
   padding-bottom: 100px;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 10%;
+  position: relative;
 }
+
 nav .logo {
   font-weight: bold;
   font-size: 1.5em;
@@ -49,74 +52,86 @@ nav ul {
   display: flex;
   list-style: none;
 }
+
 nav ul li {
   margin-left: 20px;
 }
+
 nav ul li a {
   color: white;
   text-decoration: none;
 }
+
 nav ul li a:hover {
   color: #ff6565;
 }
+
 .hero-content {
   text-align: center;
   margin-top: 80px;
 }
+
 .hero-content h1 {
   font-size: 2.5em;
 }
+
 .hero-content p {
   margin: 15px 0;
   color: #ccc;
 }
 
-/* What We Do */
 .what-we-do {
   text-align: center;
   padding: 60px 10%;
   background: white;
 }
+
 .what-we-do h2 {
   margin-bottom: 20px;
 }
+
 .what-we-do p {
   max-width: 600px;
   margin: 0 auto 40px;
 }
+
 .icons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .icons div {
   width: 200px;
   margin: 20px;
 }
+
 .icons i {
   font-size: 2.5em;
   color: #ff6565;
   margin-bottom: 10px;
 }
 
-/* Results */
 .results {
   text-align: center;
   padding: 60px 10%;
   background: #1b263b;
   color: white;
 }
+
 .results p {
   color: #ccc;
   max-width: 600px;
   margin: 0 auto 40px;
 }
+
 .pentagons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
+
 .pentagon {
   width: 120px;
   height: 120px;
@@ -127,27 +142,30 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
 }
+
 .pentagon span {
   font-weight: bold;
   font-size: 1.2em;
 }
+
 .pentagon p {
   font-size: 0.8em;
   margin-top: 5px;
 }
 
-/* Contact */
 .contact {
   text-align: center;
   padding: 60px 10%;
   background: white;
 }
+
 .contact form {
   max-width: 500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
+
 .contact input,
 .contact textarea {
   padding: 10px;
@@ -156,37 +174,40 @@ nav ul li a:hover {
   border-bottom: 2px solid #ccc;
   outline: none;
 }
+
 .contact input:focus,
 .contact textarea:focus {
   border-bottom: 2px solid #ff6565;
 }
 
-/* Footer */
 footer {
   background: #0d1b2a;
   color: white;
   padding: 20px 10%;
   text-align: center;
 }
+
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
+
 .footer-content .logo {
   font-weight: bold;
 }
+
 .footer-content .socials a {
   color: white;
   margin-left: 10px;
   font-size: 1.2em;
 }
+
 .footer-content .socials a:hover {
   color: #ff6565;
 }
 
-/* ===== Mobile menu system (no JS) ===== */
 .menu-toggle {
   position: absolute;
   width: 1px;
@@ -199,6 +220,7 @@ footer {
   padding: 0;
   margin: 0;
 }
+
 .menu_btn {
   display: none;
   align-items: center;
@@ -206,23 +228,26 @@ footer {
   cursor: pointer;
   color: #fff;
 }
+
 .menu_btn .icon-burger {
   font-size: 22px;
   line-height: 1;
 }
+
 .menu_btn .icon-x {
   display: none;
   font-weight: 700;
   font-size: 20px;
 }
+
 .desktop_nav {
   display: flex;
 }
+
 .mobile_nav {
   display: none;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .menu_btn {
     display: flex;
@@ -237,26 +262,46 @@ footer {
   }
 
   .mobile_nav {
-    display: none;
-    position: absolute;
-    top: 64px;
-    left: 12px;
-    right: 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    background: #1b263b;
+    display: flex;
     flex-direction: column;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.95);
-    padding: 16px;
-    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
     z-index: 2;
   }
 
-  .menu-toggle:checked ~ .mobile_nav {
-    display: flex;
+  .mobile_nav li a {
+    color: white;
+    font-size: 18px;
   }
+
+  .menu-toggle:checked ~ .mobile_nav {
+    transform: translateX(0);
+  }
+
   .menu-toggle:checked ~ .menu_btn .icon-burger {
     display: none;
   }
+
   .menu-toggle:checked ~ .menu_btn .icon-x {
     display: inline-block;
+  }
+
+  .icons,
+  .pentagons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
   }
 }

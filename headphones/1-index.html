@@ -9,12 +9,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Header / Hero -->
   <header class="hero">
     <nav>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu_btn">
+        <i class="fas fa-bars icon-burger"></i>
+        <span class="icon-x">✖</span>
+      </label>
       <div class="logo"> <img src="images/logo_headphones.png" /> </div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#what">What we do</a></li>
         <li><a href="#results">Our results</a></li>
         <li><a href="#contact">Contact us</a></li>
@@ -26,12 +29,9 @@
       <a href="#contact" class="btn">CALL TO ACTION</a>
     </div>
   </header>
-
-  <!-- What We Do -->
   <section id="what" class="what-we-do">
     <h2>What we do...</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
     <div class="icons">
       <div>
         <i class="fas fa-music"></i>
@@ -55,6 +55,5 @@
       </div>
     </div>
   </section>
-
 </body>
 </html>
